@@ -1,0 +1,76 @@
+@import '../styles';
+
+$directions: 'left', 'top', 'right', 'bottom';
+$types: 'margin', 'padding';
+@each $type in $types {
+  @for $i from 0 through 50 {
+    .#{$type}-#{$i} {
+      #{$type}: #{$i}px;
+    }
+    .#{$type}-#{$i}-imp {
+      #{$type}: #{$i}px !important;
+    }
+
+    @each $direction in $directions {
+      .#{$type}-#{$direction}-#{$i} {
+        #{$type}-#{$direction}: #{$i}px;
+      }
+      .#{$type}-#{$direction}-#{$i}-imp {
+        #{$type}-#{$direction}: #{$i}px !important;
+      }
+    }
+  }
+}
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+html, body {
+  background: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+.mdc-top-app-bar {
+  position: relative;
+  top: 0 !important;
+}
+
+.avatar {
+  border-radius: 8px;
+  border: 4px white solid;
+
+  box-shadow: 0 3px 7px rgba(#000, 0.4);
+
+  object-fit: cover;
+  width: 70%;
+
+  z-index: 10;
+}
+
+.profile-container {
+  position: relative;
+  top: -120px;
+  padding-top: 140px;
+  margin-bottom: -80px;
+
+  z-index: 9;
+}
+
+.link {
+  color: $mdc-theme-primary;
+}
+
+.fit-width {
+  width: 100%;
+}
+
+.project-image {
+  width: calc(100% + calc(40px - 16px));
+  height: 160px;
+  object-fit: cover;
+  margin: 20px calc(-20px + 8px) 10px;
+  box-shadow: 0 2px 4px rgba(#000, 0.3);
+  border-radius: 4px;
+}

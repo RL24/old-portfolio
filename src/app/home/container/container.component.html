@@ -1,0 +1,79 @@
+<div fxLayout="row" fxLayoutGap="40px">
+  <div fxFlex="50" fxLayout="column" fxLayoutAlign="start center" class="margin-top-50">
+    <img fxFlex="nogrow" class="avatar" src="/assets/img/avatar.jpg">
+    <mdc-card fxLayout="column" fxLayoutGap="10px" class="padding-20 profile-container fit-width">
+      <div fxFlex="nogrow" fxLayout="column">
+        <span mdc-typography-headline fxFlex="nogrow">Richard Lapwood</span>
+        <span mdc-typography-subheading2 fxFlex="nogrow">Software Engineer</span>
+      </div>
+      <div fxFlex="nogrow" fxLayout="row" fxLayoutGap="20px">
+        <div fxFlex="nogrow" fxLayout="column">
+          <span mdc-typography-caption fxFlex="nogrow">Mobile:</span>
+          <span mdc-typography-caption fxFlex="nogrow">Email:</span>
+        </div>
+        <div fxFlex fxLayout="column">
+          <a mdc-typography-caption fxFlex="nogrow" class="link" href="tel:+64220369958">+64 22 036 9958</a>
+          <a mdc-typography-caption fxFlex="nogrow" class="link" href="mailto:richardlapwood24@gmail.com">richardlapwood24@gmail.com</a>
+        </div>
+      </div>
+    </mdc-card>
+  </div>
+  <div fxFlex="50" fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="40px">
+    <mdc-card fxLayout="column" fxLayoutGap="10px" class="fit-width">
+      <mdc-card-primary-action mdc-ripple class="padding-20" (click)="navigate('https://web.myblueprint.cloud')">
+        <div fxFlex="nogrow" fxLayout="column">
+          <span fxFlex="nogrow" mdc-typography-headline>MyBlueprint</span>
+          <span fxFlex="nogrow" mdc-typography-caption>Web Dashboard</span>
+        </div>
+        <img fxFlex="nogrow" src="/assets/img/projects/myblueprint.png" class="project-image">
+        <span fxFlex="nogrow" mdc-typography-caption>Angular 5, TypeScript, GraphQL, AWS</span>
+      </mdc-card-primary-action>
+    </mdc-card>
+    <mdc-card fxLayout="column" fxLayoutGap="10px" class="fit-width">
+      <mdc-card-primary-action mdc-ripple class="padding-20" (click)="navigate('https://github.com/RL24/PropertyManager')">
+        <div fxFlex="nogrow" fxLayout="column">
+          <span fxFlex="nogrow" mdc-typography-headline>Property Manager</span>
+          <span fxFlex="nogrow" mdc-typography-caption>Java Utility Library</span>
+        </div>
+      </mdc-card-primary-action>
+    </mdc-card>
+    <mdc-card fxLayout="column" fxLayoutGap="10px" class="fit-width">
+      <mdc-card-primary-action mdc-ripple class="padding-20" (click)="navigate('https://github.com/RL24/EventManager')">
+        <div fxFlex="nogrow" fxLayout="column">
+          <span fxFlex="nogrow" mdc-typography-headline>Event Manager</span>
+          <span fxFlex="nogrow" mdc-typography-caption>Java Utility Library</span>
+        </div>
+      </mdc-card-primary-action>
+    </mdc-card>
+    <mdc-card fxLayout="column" fxLayoutGap="10px" class="fit-width">
+      <mdc-card-primary-action mdc-ripple class="padding-20" (click)="navigate('https://github.com/RL24/D303')">
+        <div fxFlex="nogrow" fxLayout="column">
+          <span fxFlex="nogrow" mdc-typography-headline>TuckBox</span>
+          <span fxFlex="nogrow" mdc-typography-caption>Mock Android Application</span>
+        </div>
+        <img fxFlex="nogrow" src="/assets/img/projects/tuckbox.jpg" class="project-image">
+        <span fxFlex="nogrow" mdc-typography-caption>Java, AndroidStudio, Google FireBase</span>
+      </mdc-card-primary-action>
+    </mdc-card>
+    <mdc-card fxLayout="column" fxLayoutGap="10px" class="fit-width">
+      <mdc-card-primary-action mdc-ripple class="padding-20" (click)="navigate('https://github.com/RL24/I309')">
+        <div fxFlex="nogrow" fxLayout="column">
+          <span fxFlex="nogrow" mdc-typography-headline>Sudoku Solver</span>
+          <span fxFlex="nogrow" mdc-typography-caption>C++ Console Application</span>
+        </div>
+        <img fxFlex="nogrow" src="/assets/img/projects/sudoku-solver.jpg" class="project-image">
+        <span fxFlex="nogrow" mdc-typography-caption>C++, CMake</span>
+      </mdc-card-primary-action>
+    </mdc-card>
+    <mdc-card fxLayout="column" fxLayoutGap="10px" class="fit-width">
+      <mdc-card-primary-action mdc-ripple class="padding-20" (click)="navigate('https://github.com/RL24/I311')">
+        <div fxFlex="nogrow" fxLayout="column">
+          <span fxFlex="nogrow" mdc-typography-headline>Sample Newsfeed</span>
+          <span fxFlex="nogrow" mdc-typography-caption>Web Application</span>
+        </div>
+        <img fxFlex="nogrow" src="/assets/img/projects/nodejs-express.jpg" class="project-image">
+        <span fxFlex="nogrow" mdc-typography-caption>Node.js, Express, JavaScript, LowDB</span>
+      </mdc-card-primary-action>
+    </mdc-card>
+  </div>
+</div>
