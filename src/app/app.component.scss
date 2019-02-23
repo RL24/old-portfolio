@@ -1,0 +1,142 @@
+@import '../styles';
+
+.section-container {
+  width: calc(100% - 2rem);
+  min-height: calc(100vh - 2rem);
+
+  padding: 1rem;
+
+  color: $font-color;
+
+  font-family: $font-family;
+
+  .title, .subtitle {
+    font-family: 'Amatic SC', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.25rem;
+  }
+
+  .title {
+    font-size: 4rem;
+  }
+
+  .subtitle {
+    font-size: 2rem;
+  }
+
+  .content {
+    font-size: 1rem;
+  }
+
+  .projects {
+    max-width: 80rem;
+
+    .project {
+      border-radius: 0.5rem;
+      overflow: hidden;
+      padding: 1.25rem;
+      width: 18.75rem;
+
+      .project-title { font-size: 2rem; }
+      .project-description { font-size: 1.25rem; }
+
+      @include transitional(transform, 300ms, cubic-bezier(0.68, -0.55, 0.265, 1.55));
+
+      .project-image {
+        position: relative;
+        border-radius: 0.25rem;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 9.375rem;
+          object-fit: cover;
+          border-radius: 0.25rem;
+
+          &:nth-child(2) {
+            opacity: 0;
+            position: absolute;
+            left: 0;
+            top: calc(-100% - 1rem);
+            @include transitional(all, 300ms, ease-in-out);
+          }
+        }
+      }
+
+      &:hover {
+        transform: scale(1.1, 1.1);
+
+        .project-image img:nth-child(2) {
+          opacity: 1;
+          top: 0;
+        }
+      }
+    }
+  }
+
+  input {
+    border: 1px solid $font-color;
+    border-radius: 0.25rem;
+    background: $background-color;
+    color: $font-color;
+    outline: none;
+    padding: 0.75rem;
+    font-family: $font-family;
+  }
+
+  button {
+    background: $background-color;
+    border: 1px solid $font-color;
+    border-radius: 0.25rem;
+    color: $font-color;
+    font-family: $font-family;
+    outline: none;
+    padding: 0 15px;
+
+    &:not(:disabled) {
+      &:hover {
+        cursor: pointer;
+        background: #303030;
+      }
+
+      &:active {
+        background: #101010;
+      }
+    }
+
+    &:disabled {
+      color: #ababab;
+    }
+  }
+
+  [connected-left] {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: none;
+  }
+
+  [connected-right] {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: none;
+  }
+}
+
+.page-navigation {
+  color: $font-color;
+  padding: 1rem;
+
+  &> *{
+    font-size: 2rem;
+    @include transitional(all, 100ms, ease-in-out);
+    
+    &:hover {
+      color: rgba(128, 80, 255, 255);
+    }
+  }
+}
+
+.page-container {
+  height: 100vh;
+  overflow: auto;
+}

@@ -1,0 +1,16 @@
+<div fxLayout fxRow>
+    <div fxFlex fxNoGrow fxLayout fxColumn fxAlign fxMiddle fxGap class="fxGap-15 page-navigation">
+        <a fxFlex fxNoGrow routerLink="/">
+            <i class="fas fa-home"></i>
+        </a>
+        <a fxFlex fxNoGrow routerLink="/steam">
+            <i class="fab fa-steam"></i>
+        </a>
+        <a fxFlex fxNoGrow routerLink="/paladins" class="custom-icon">
+            p
+        </a>
+    </div>
+    <div fxFlex class="page-container">
+        <router-outlet></router-outlet>
+    </div>
+</div>

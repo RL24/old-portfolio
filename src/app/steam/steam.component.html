@@ -1,0 +1,31 @@
+<div fxLayout fxColumn fxAlign fxCenter fxMiddle fxGap class="fxGap-50 section-container">
+  <div fxFlex fxNoGrow fxLayout fxColumn fxAlign fxCenter fxMiddle>
+    <span fxFlex fxNoGrow class="title">Steam</span>
+    <span fxFlex fxNoGrow class="subtitle">Library Lookup</span>
+  </div>
+  <form [formGroup]="searchForm" fxFlex fxNoGrow fxLayout fxColumn class="content">
+    <div fxFlex fxNoGrow fxLayout fxRow fxAlign fxCenter fxStretch>
+      <input formControlName="search" type="text" name="search" connected-right (keyup.enter)="loadSearchResults(search)" />
+      <button fxFlex fxNoGrow connected-left (click)="loadSearchResults()" [disabled]="!isSearchable()"><i class="fas fa-search"></i></button>
+    </div>
+    <div *ngIf="loadingSearchUser" fxFlex fxNoGrow>
+      Searching users...
+    </div>
+    <div *ngIf="searchUser" fxFlex fxNoGrow>
+      Found user {{ searchUser.personaname }}
+    </div>
+  </form>
+  <div *ngIf="loadingResults" fxFlex fxNoGrow class="content">
+    Fetching games...
+  </div>
+  <div *ngIf="users.length > 0" fxFlex fxNoGrow fxLayout fxColumn fxAlign fxCenter fxMiddle class="content">
+    <div fxFlex fxNoGrow class="search-term">
+      Found {{ games.length }} games that {{ getUsernames(users) }} {{ users.length > 1 ? 'have in common' : 'has' }}
+    </div>
+    <div fxFlex fxNoGrow fxLayout fxRow fxWrap fxAlign fxCenter fxTop class="games">
+      <a [href]="getRunUrl(game) | safe" fxFlex fxNoGrow *ngFor="let game of games" class="game">
+        <img src="http://cdn.akamai.steamstatic.com/steam/apps/{{ game.appid }}/header.jpg" onerror="if (this.src != 'https://i.imgur.com/pSg6UEn.png') this.src = 'https://i.imgur.com/pSg6UEn.png';" />
+      </a>
+    </div>
+  </div>
+</div>

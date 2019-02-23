@@ -1,0 +1,13 @@
+<div fxLayout fxColumn fxAlign fxCenter fxMiddle fxGap class="fxGap-50 section-container">
+  <div fxFlex fxNoGrow fxLayout fxColumn fxAlign fxCenter fxMiddle>
+    <span fxFlex fxNoGrow class="title">Paladins</span>
+    <span fxFlex fxNoGrow class="subtitle">Name History Lookup</span>
+  </div>
+  <div fxFlex fxNoGrow fxLayout fxRow fxAlign fxCenter fxStretch class="content">
+    <input #search type="text" name="search" connected-right />
+    <button fxFlex fxNoGrow connected-left (click)="loadSearchResults(search.value)"><i class="fas fa-search"></i></button>
+  </div>
+  <div fxFlex fxLayout fxColumn fxWrap class="content usernames">
+    <span fxFlex fxNoGrow *ngFor="let username of searchResults">{{ username }}</span>
+  </div>
+</div>

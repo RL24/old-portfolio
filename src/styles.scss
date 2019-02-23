@@ -1,0 +1,114 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://use.fontawesome.com/releases/v5.5.0/css/all.css');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Chakra+Petch:300,400,500,600,700|Lato:100,300,400,700,900|Niramit:200,300,400,500,600,700|Open+Sans+Condensed:300,700');
+
+$font-family: 'Lato', sans-serif;
+$font-color: #efefef;
+$background-color: #202020;
+
+body {
+  background: $background-color;
+  margin: 0;
+  font-family: $font-family;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@mixin transitional($for, $time, $mode) {
+  $transition: $for $time $mode;
+  transition: $transition;
+  -o-transition: $transition;
+  -moz-transition: $transition;
+  -webkit-transition: $transition;
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src: url('/assets/fonts/icomoon/icomoon.eot?5qhapi');
+  src: url('/assets/fonts/icomoon/icomoon.eot?5qhapi#iefix') format('embedded-opentype'),
+        url('/assets/fonts/icomoon/icomoon.ttf?5qhapi') format('truetype'),
+        url('/assets/fonts/icomoon/icomoon.woff?5qhapi') format('woff'),
+        url('/assets/fonts/icomoon/icomoon.svg?5qhapi#icomoon') format('svg');
+}
+
+.custom-icon {
+  font-family: 'icomoon';
+}
+
+/*
+  FLEX STYLING
+*/
+
+*[fxLayout] {
+  display: flex;
+
+  &[fxRow] {
+    flex-direction: row;
+    &[fxReverse] { flex-direction: row-reverse; }
+  }
+
+  &[fxColumn] {
+    flex-direction: column;
+    &[fxReverse] { flex-direction: column-reverse; }
+  }
+
+  &[fxWrap] {
+    flex-wrap: wrap;
+    &[fxWrapReverse] { flex-wrap: wrap-reverse; }
+  }
+
+  &[fxAlign] {
+    &[fxLeft] { justify-content: flex-start; }
+    &[fxCenter] { justify-content: center; }
+    &[fxRight] { justify-content: flex-end; }
+    &[fxBetween] { justify-content: space-between; }
+    &[fxAround] { justify-content: space-around; }
+    &[fxEvenly] { justify-content: space-evenly; }
+
+    &[fxTop] { align-items: flex-start; }
+    &[fxMiddle] { align-items: center; }
+    &[fxBottom] { align-items: flex-end; }
+    &[fxStretch] { align-items: stretch; }
+    &[fxBaseline] { align-items: baseline; }
+  }
+
+  &[fxGap] {
+    @for $i from 1 through 50 {
+      $j: $i / 2;
+      &[fxRow] {
+        &.fxGap-#{$i} > * {
+          &:not(:first-child):not(:last-child) {
+            margin-left: #{$j}px;
+            margin-right: #{$j}px;
+          }
+
+          &:first-child { margin-right: #{$j}px; }
+          &:last-child { margin-left: #{$j}px; }
+        }
+      }
+
+      &[fxColumn] {
+        &.fxGap-#{$i} > * {
+          &:not(:first-child):not(:last-child) {
+            margin-top: #{$j}px;
+            margin-bottom: #{$j}px;
+          }
+
+          &:first-child { margin-bottom: #{$j}px; }
+          &:last-child { margin-top: #{$j}px; }
+        }
+      }
+    }
+  }
+
+  *[fxFlex] {
+    flex: 1 1 auto;
+    &[fxNoGrow] { flex-grow: 0; }
+    &[fxNoShrink] { flex-shrink: 0; }
+    &[fx50] { flex: 1 1 50% }
+  }
+}

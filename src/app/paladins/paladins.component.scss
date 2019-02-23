@@ -1,0 +1,14 @@
+@import '../../styles';
+
+.usernames {
+  font-family: $font-family;
+  letter-spacing: normal;
+  font-weight: normal;
+  max-height: 40vh;
+  align-content: center;
+
+  & > span {
+    padding: 20px;
+    text-align: center;
+  }
+}
